@@ -1,30 +1,30 @@
 """
-This file should request and create a Jira Issue
+This file should request and create a Slack Post
 """
 
+from src.config.config import get_slack_endpoint_url
 import requests
+
 
 """
 @description: This is description 1
 @params: None
 @return:
 """
-def request_jira_token():
-    requests.get("https://myurl.com")
-    return ''
+# def authenticate_slack():
+#     app = App(
+#         token=os.environ.get("SLACK_BOT_TOKEN"),
+#         signing_secret=os.environ.get("SLACK_SIGNING_SECRET")
+#     )
+#     return app
 
 """
 @description: This is description 2
 @params: None
 @return:
 """
-def create_jira_story():
-    return ''
+def create_slack_post(message:str = ''):
+    payload = '{"text": "%s"}' % message
+    res = requests.post(get_slack_endpoint_url(), data = payload)
+    return res.text
 
-"""
-@description: This is description 3
-@params: None
-@return:
-"""
-def delete_jira_story():
-    return ''

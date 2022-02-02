@@ -1,5 +1,5 @@
 """
-This file should request and create a GitHub Api
+This file should request and create a Slack Post
 """
 
 import requests
@@ -9,7 +9,7 @@ import requests
 @params: None
 @return:
 """
-def request_github_token():
+def request_jira_token():
     requests.get("https://myurl.com")
     return ''
 
@@ -18,6 +18,13 @@ def request_github_token():
 @params: None
 @return:
 """
-def scan_repository():
+def create_jira_story():
     return ''
 
+"""
+@description: This is description 3
+@params: None
+@return:
+"""
+def delete_jira_story():
+    return ''
