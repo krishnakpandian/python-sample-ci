@@ -2,7 +2,7 @@
 This file should request and create a Slack Post
 """
 
-from src.config.config import get_slack_endpoint_url
+from config.config import get_slack_endpoint_url
 import requests
 
 
@@ -18,13 +18,8 @@ import requests
 #     )
 #     return app
 
-"""
-@description: This is description 2
-@params: None
-@return:
-"""
+''' @description: This is description 2 @params: None @return: '''
 def create_slack_post(message:str = ''):
     payload = '{"text": "%s"}' % message
     res = requests.post(get_slack_endpoint_url(), data = payload)
     return res.text
-
